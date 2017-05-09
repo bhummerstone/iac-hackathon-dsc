@@ -54,11 +54,11 @@ Node $nodeName
 	Script DownloadWebDeployPackage
     {
         TestScript = {
-    		Test-Path -Path "C:\iac-hackathon-app.zip"
+    		Test-Path -Path "C:\TM-Demo-App.zip"
         }
         SetScript ={
-			$source  = "https://raw.githubusercontent.com/bhummerstone/iac-hackathon-dsc/master/iac-hackathon-app.zip"
-			$dest    = "C:\iac-hackathon-app.zip"
+			$source  = "https://github.com/GSIAzureCOE/Networking/raw/master/Demo-TrafficManager/TM-Demo-Solution/TM-Demo/App/TM-Demo-App.zip"
+			$dest    = "C:\TM-Demo-App.zip"
 			Invoke-WebRequest $source -OutFile $dest
         }
         GetScript = {@{Result = "DownloadWebDeployPackage"}}
@@ -74,7 +74,7 @@ Node $nodeName
 			$siteName     = "Default Web Site"
 			$msDeployPath = "C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe" 
 
-			& $msDeployPath "-verb:sync", "-source:package=C:\iac-hackathon-app.zip", "-dest:auto,ComputerName=""localhost""", "-setParam:name=""$appName"",value=""$siteName"""
+			& $msDeployPath "-verb:sync", "-source:package=C:\TM-Demo-App.zip", "-dest:auto,ComputerName=""localhost""", "-setParam:name=""$appName"",value=""$siteName"""
 		    
 			if ($LASTEXITCODE -eq 0) 
 			{
