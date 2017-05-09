@@ -1,7 +1,9 @@
 Configuration Main
 {
 
-Node localhost
+Param ( [string] $nodeName )
+
+Node $nodeName
   {
     WindowsFeature WebServerRole
     {
