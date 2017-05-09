@@ -1,11 +1,7 @@
 Configuration Main
 {
 
-Param ( [string] $nodeName )
-
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-
-Node $nodeName
+Node WebServer
   {
     WindowsFeature WebServerRole
     {
