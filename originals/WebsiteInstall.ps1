@@ -1,7 +1,7 @@
 Configuration Main
 {
 
-Node WebServer
+Node localhost
   {
     WindowsFeature WebServerRole
     {
