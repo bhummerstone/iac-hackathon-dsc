@@ -67,7 +67,7 @@ Node $nodeName
 	Script InstallWebDeployPackage
     {
         TestScript = {
-    		Test-Path -Path "HKLM:\SOFTWARE\DSC-Software\WebDeployPkgInstalled"
+    		Test-Path -Path "HKLM:\SOFTWARE\DSC-Software\IaCWebDeployPkgInstalled"
         }
         SetScript ={
 			$appName      = "IIS Web Application Name"
@@ -78,7 +78,7 @@ Node $nodeName
 		    
 			if ($LASTEXITCODE -eq 0) 
 			{
-				New-Item -Path "HKLM:\SOFTWARE\DSC-Software\WebDeployPkgInstalled" -Force
+				New-Item -Path "HKLM:\SOFTWARE\DSC-Software\IaCWebDeployPkgInstalled" -Force
 			}
         }
         GetScript = {@{Result = "InstallWebDeployPackage"}}
