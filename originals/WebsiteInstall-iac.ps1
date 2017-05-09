@@ -53,7 +53,7 @@ Node WebServer
     		Test-Path -Path "C:\iac-hackathon-app.zip"
         }
         SetScript ={
-			$source  = "https://raw.githubusercontent.com/bhummerstone/iac-hackathon-dsc/master/iac-hackathon-app.zip"
+			$source  = "https://github.com/bhummerstone/iac-hackathon-dsc/raw/master/iac-hackathon-app.zip"
 			$dest    = "C:\iac-hackathon-app.zip"
 			Invoke-WebRequest $source -OutFile $dest
         }
